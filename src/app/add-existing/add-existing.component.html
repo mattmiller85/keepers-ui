@@ -1,0 +1,15 @@
+<div>
+  <h1 x-large>Add existing document</h1>
+  <div class="form-group">
+    <label for="tags">Tags</label>
+    <input [(ngModel)]="tags" type="text" class="form-control" id="tags" aria-describedby="tagsHelp" placeholder="Enter tags">
+    <small id="tagsHelp" class="form-text text-muted">Additional tags separated by a space for better searching.</small>
+  </div>
+  <div class="form-group">
+    <label for="tags">Choose file(s)</label>
+    <input type="file" multiple (change)="setFiles($event)" class="form-control" id="files" aria-describedby="filesHelp" placeholder="Choose file(s)">
+    <small id="filesHelp" class="form-text text-muted">Choose one or more existing files.</small>
+  </div>
+  
+  <button (click)="addKeepers()" type="submit" class="btn btn-primary">Submit</button>
+</div>

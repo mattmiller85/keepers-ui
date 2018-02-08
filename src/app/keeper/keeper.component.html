@@ -1,0 +1,17 @@
+<div *ngIf="keeper">
+  <div>{{ keeper.tags }}</div>
+  <h1 x-large class="sample-content">{{ formattedDate(keeper.created).fromNow() }}</h1>
+  <img [attr.src]="imageSrc" />
+  <div class="form-group">
+    <label for="tags">Tags</label>
+    <input [(ngModel)]="keeper.tags" type="text" class="form-control" id="tags" aria-describedby="tagsHelp" placeholder="Enter tags">
+    <small id="tagsHelp" class="form-text text-muted">Additional tags separated by a space for better searching.</small>
+  </div>
+  <button (click)="saveKeeper()" type="submit" class="btn btn-primary">Save tags</button>
+  <button (click)="removeKeeper()" type="submit" class="btn btn-danger float-right">Remove</button>
+  <div class="text-muted">{{ keeper.id }}</div>
+</div>
+<div *ngIf="!keeper">
+  <div class="alert alert-warning">Keeper not found</div>
+</div>
+  

@@ -1,0 +1,17 @@
+<div>
+  <h1 x-large>Add new document</h1>
+  <div class="form-group">
+    <label for="tags">Tags</label>
+    <input [(ngModel)]="tags" type="text" class="form-control" id="tags" aria-describedby="tagsHelp" placeholder="Enter tags">
+    <small id="tagsHelp" class="form-text text-muted">Additional tags separated by a space for better searching.</small>
+  </div>
+  <div class="form-group">
+    <label for="tags">Pick a source</label>
+    <select class="form-control"  id="scanner"
+          required
+          [(ngModel)]="source" name="source">
+    <option *ngFor="let source of sources" [value]="source">{{source}}</option>
+  </select>
+  </div>
+  <button (click)="addKeepers()" type="submit" class="btn btn-primary">Scan now</button>
+</div>

@@ -1,0 +1,7 @@
+<nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item" *ngFor="let result of results">
+            <a class="nav-link" routerLinkActive="active" [routerLink]=" ['/keeper', result.id] " href="#">{{ formattedDate(result.created).fromNow() }} {{ result.tags }}<span class="sr-only">(current)</span></a>
+        </li>
+    </ul>
+</nav>
